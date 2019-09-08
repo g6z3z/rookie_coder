@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<iostream>
+using namespace std;
+/*programing has three class A B C，class relationship has delegation and inheritance ,
+derived class B inheritance base class A,
+derived class B component class C，
+test any class is called first and last */
+
+class A {
+// base class
+public:
+	char oa() const { cout << "this is class A"; }
+	char Serialize() {};
+};
+
+class C
+	//be component class
+{
+public:
+	string oc() const { return str;}
+	string str = "this is class c";
+};
+
+class B : A
+//derived calss
+{
+protected: 
+    C c;//composition grammer class name object
+public:
+	string ob() const { return c.oc(); }
+	virtual char Serialize(void)
+	{
+		cout << "this is class B"; 
+		return 0;
+	}
+};
+
+int main() {
+	B me;
+	cout<<me.Serialize()<<endl;
+	cout<<me.ob()<<endl;
+	cout << "ok";
+};
+
+=====================================
+this is class B
+this is class c
+ok
