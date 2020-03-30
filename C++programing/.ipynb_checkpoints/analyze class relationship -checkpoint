@@ -1,0 +1,141 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# explore class relationship about component and interitance"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#include<stdio.h>\n",
+    "#include<iostream>\n",
+    "using namespace std;"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class A {\n",
+    "// base class\n",
+    "public:\n",
+    "\tchar oa() const { cout << \"this is class A\"; }\n",
+    "\tchar Serialize() {};\n",
+    "};"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "fist class A is a base class,member function oa()and vitrual function Serialize()\n",
+    "vitrual fuction need be realize at class B"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class C\n",
+    "\t//be component class\n",
+    "{\n",
+    "public:\n",
+    "\tstring oc() const { return str;}\n",
+    "\tstring str = \"this is class c\";\n",
+    "};"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "code order is A C B main ,because class B inheritance A,component C,so A C would be realized in front of B.\n",
+    "class C have oc() fuction "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class B : A\n",
+    "//derived calss\n",
+    "{\n",
+    "protected: \n",
+    "    C c;//composition grammer class name object\n",
+    "public:\n",
+    "\tstring ob() const { return c.oc(); }\n",
+    "\tvirtual char Serialize(void)\n",
+    "\t{\n",
+    "\t\tcout << \"this is class B\"; \n",
+    "\t\treturn 0;\n",
+    "\t}\n",
+    "};"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**interitance grammar :derived class name:base class name\n",
+    "**component grammar :be component class name construct a object eg:C c;\n",
+    "        \n",
+    "**class B virtual fuction keywords and note fucntion's parameter\n",
+    "**note fuction need a return value "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "int main() {\n",
+    "\tB me;\n",
+    "\tcout<<me.Serialize()<<endl;\n",
+    "\tcout<<me.ob()<<endl;\n",
+    "\tcout << \"ok\";\n",
+    "};"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "before call methods would declear a object,fuction return value througt cout printf."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

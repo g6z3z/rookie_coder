@@ -1,0 +1,31 @@
+one.git command
+  *join in
+  git config --global user.name "   "
+  git config --global user.email "   "
+ 
+  *create ssh
+  cd ~/.ssh
+  ssh-keygen -t rsa -C "email"
+    three enter key
+    
+  *upload file
+  1.git init
+  2.git add . //all file
+   git add filename.type
+  3.git commit -m "describe"
+  
+  *link github count
+  1.build a new repository
+  2.git remote add origin https://.....git
+    git remote rm origin //fatal remote origin already exists
+  
+  *push local to web
+  git push origin master
+  *pull web to local
+  git pull origin master
+  
+  over
+  
+================================================
+two. visual stdio2019
+none
